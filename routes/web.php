@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['as' =>'admin', 'prefix' => 'admin', 'namespace' => 'admin', 'middleware' =>['auth','verifyAdmin']], function(){
+Route::group(['as' =>'admin', 'prefix' => 'admin', 'namespace' => 'admin', 'middleware' =>['verifyAdmin']], function(){
     Route::get('/', 'AdminController@index')->name('index');
 });
 
